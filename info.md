@@ -1,17 +1,7 @@
-### Rapid Developer-driven Threat Modeling Information
+### Project Information
 * [Incubator Project](#)
-* [Type of Project](#)
-* [Version 0.0.0](#)
-* [Builder](#)
-* [Breaker](#)
-
-### Downloads or Social Links
-* [Download](#)
-* [Meetup](#)
+* <i class="fas fa-book" style="color:#233e81;"></i> Documentation
 
 ### Code Repository
-* [repo](#)
-
-### Change Log
-* [changes](#)
+* [Repository](https://github.com/OWASP/www-project-rapid-developer-driven-threat-modeling)
 

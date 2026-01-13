@@ -1,6 +1,4 @@
 ### Leaders
-* [Andrea Scaduto](mailto:[andrea.scaduto@owasp.org|mailto:andrea.scaduto@owasp.org])
-* [](mailto:[andrea.scaduto@owasp.org|mailto:andrea.scaduto@owasp.org])
-* [Alan Pestrin](mailto:[andrea.scaduto@owasp.org|mailto:andrea.scaduto@owasp.org])
-* [](mailto:[andrea.scaduto@owasp.org|mailto:andrea.scaduto@owasp.org])
-* [Andrea Hainault](mailto:[andrea.scaduto@owasp.org|mailto:andrea.scaduto@owasp.org])
+* [Andrea Scaduto](mailto:[andrea.scaduto@owasp.org])
+* [Alan Pestrin](mailto:[alan.pestrin@owasp.org])
+* [Andrea Hainault](mailto:[andrew.hainault@owasp.org])
