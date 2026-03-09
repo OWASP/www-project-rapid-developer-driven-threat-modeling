@@ -2,10 +2,10 @@
 
 | Contributor     | E-Mail                            |
 |-----------------|-----------------------------------|
-| Alan Pestrin    | <alan.pestrin@thomsonreuters.com> |
-| Andrea Scaduto  | <andrea@secureflag.com>           |
+| Alan Pestrin    | <alan.pestrin@owasp.org> |
+| Andrea Scaduto  | <andrea.scaduto@owasp.org>           |
 | Andrea Cardaci  | <acardaci@secureflag.com>         |
-| Andrew Hainault | <andrew.hainault@aon.co.uk>       |
+| Andrew Hainault | <andrew.hainault@owasp.org>       |
 | Grant Ongers    | <grant.ongers@owasp.org>          |
 | Stefano Ciccone | <stefano.ciccone@secureflag.com>  |
 
@@ -1044,39 +1044,6 @@ Threat Templates should evolve over time:
     <tr><td>Missing anti-repudiation measures</td><td>Lack of digital signatures allows transaction denial.</td><td>Moderate</td><td>Implement signing and verification, use tamper-proof logs.</td></tr>
     <tr><td>Ineffective monitoring for STRIDE categories</td><td>No specific detection for spoofing/tampering/disclosure.</td><td>Moderate</td><td>Map detections to STRIDE matrix, use MITRE ATT&amp;CK coverage.</td></tr>
   </table>
-
-
-
-# RaD-TM Threat Templates: Azure, GCP, HIPAA, Privacy, Low-Code/No-Code, STRIDE
-
----
-
-## Threat Template: **Azure**
-
-**Scope / Context:** Deployment of workloads and services in Microsoft Azure (IaaS / PaaS / SaaS)
-
-| Threat | Description | Default Severity | Suggested Controls |
-|--------|-------------|------------------|---------------------|
-| Compromised Azure AD account | An attacker gains access to an Azure AD user or admin account and controls subscriptions or data. | High | Enforce MFA, conditional access, passwordless auth, disable legacy protocols. |
-| Stolen service principal or client secret | Leaked or hard-coded client secrets allow unauthorized automation or API access. | High | Use managed identities, Key Vault secret rotation, audit App Registrations. |
-| Over-privileged RBAC roles | Excessive permissions on users or service principals increase attack surface. | High | Implement least privilege, review RBAC assignments, use PIM for JIT access. |
-| Public Storage Account containers | Blob containers set to public allow data leakage. | High | Disable public access, use Private Endpoints, monitor anonymous access. |
-| Key Vault public endpoint exposure | Vault accessible from internet without network restrictions. | High | Restrict via Private Endpoint and access policies, enable firewall rules. |
-| Missing patch management on VMs | Outdated images expose known vulnerabilities. | High | Use Update Management, hardened base images, Defender for Cloud. |
-| NSG overly permissive rules | Open inbound/outbound traffic allows lateral movement or external exposure. | High | Restrict NSG rules, apply least privilege networking, log NSG flows. |
-| Misconfigured Azure Firewall / WAF | Weak or absent layer-7 filtering allows attacks through web endpoints. | Moderate | Enable WAF with OWASP rules, restrict inbound IPs, monitor logs. |
-| Shared admin accounts | Shared credentials limit accountability and increase compromise risk. | Moderate | Use individual accounts, enforce PIM, disable shared secrets. |
-| Missing diagnostic / activity logs | Incomplete logging delays incident detection. | Moderate | Enable Azure Monitor, send logs to Sentinel, ensure retention policies. |
-| Exposed management ports (RDP/SSH) | Directly exposed ports to Internet allow brute force or remote access. | High | Use Just-in-Time (JIT) VM access, restrict IPs, require VPN. |
-| Misconfigured App Service auth | Web apps not enforcing authentication allow data exposure. | High | Enable Azure AD or OAuth auth, require HTTPS, disable anonymous access. |
-| Data not encrypted at rest | Storage or DB without encryption enable data theft. | High | Use Azure Storage Service Encryption, TDE for SQL, customer-managed keys. |
-| Weak key rotation policy | Keys and secrets not rotated regularly remain vulnerable. | Moderate | Automate rotation, use Managed Identities, audit expiry dates. |
-| Insufficient backup protection | Backup storage can be deleted or overwritten by attacker. | Moderate | Enable soft delete and immutable backups, restrict delete permissions. |
-| Unrestricted outbound internet access | Workloads can reach arbitrary endpoints, risk of data exfiltration. | Moderate | Use NSG egress restrictions, proxy/firewall, Defender for Cloud egress alerts. |
-| Lack of tagging / asset inventory | Untracked resources create blind spots for security monitoring. | Low-Moderate | Enforce tagging policy, use Azure Policy for compliance and inventory. |
-| Resource locks missing | Critical resources can be deleted by mistake or attacker. | Moderate | Apply resource locks (CanNotDelete), audit removal attempts. |
-| Misconfigured Azure Policy compliance | Policies not enforced allow non-compliant deployments. | Moderate | Use initiative assignments, deployIfNotExists rules, monitor compliance. |
-| Insecure API Management configuration | APIs expose sensitive backend endpoints. | High | Use OAuth 2.0, validate JWT tokens, enable rate limiting and logging. |
 
 
 ## Full Example
